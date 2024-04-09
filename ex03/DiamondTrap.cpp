@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 16:17:41 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/09 16:48:49 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/09 19:37:43 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"
     std::cout << "DiamondTrap " << this->name << " is constructed." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) : FragTrap(other), ScavTrap(other) {
+DiamondTrap::DiamondTrap(const DiamondTrap & other) : ClapTrap(other), FragTrap(other), ScavTrap(other) {
     *this = other;
     std::cout << "DiamondTrap " << name << " is copied." << std::endl;
 }
