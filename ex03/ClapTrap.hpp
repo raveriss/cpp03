@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:31:54 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 12:21:10 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:42:05 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
  */
 class ClapTrap {
 protected:
-    std::string name;
-    unsigned int hitPoints;
-    unsigned int energyPoints;
-    unsigned int attackDamage;
+    std::string _name;
+    unsigned int _hitPoints;
+    unsigned int _energyPoints;
+    unsigned int _attackDamage;
 
 public:
     ClapTrap();

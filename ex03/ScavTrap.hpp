@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:50:02 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/09 16:24:23 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:05:55 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
+
+#define ScavTrap_energyPoints 50
+
 
 class ScavTrap : virtual public ClapTrap {
 public:

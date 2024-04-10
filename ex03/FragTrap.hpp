@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:12:02 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 12:23:03 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:07:01 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
+
+#define FragTrap_hitPoints 100
+#define FragTrap_attackDamage 30
+
 
 /**
  * @brief Classe FragTrap - Extension de ClapTrap

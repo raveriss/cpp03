@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:28:44 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 12:22:55 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:07:10 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
  * @brief Constructeur par défaut FragTrap
  */
 FragTrap::FragTrap() : ClapTrap("FragTrap_default") {
-    hitPoints = 100;
-    energyPoints = 100;
-    attackDamage = 30;
+    _hitPoints = FragTrap_hitPoints;
+    _energyPoints = 100;
+    _attackDamage = FragTrap_attackDamage;
     std::cout << "FragTrap Default constructor called" << std::endl;
 }
 
@@ -27,9 +27,9 @@ FragTrap::FragTrap() : ClapTrap("FragTrap_default") {
  * @brief Constructeur paramétré FragTrap
  */
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
-    hitPoints = 100;
-    energyPoints = 100;
-    attackDamage = 30;
+    _hitPoints = FragTrap_hitPoints;
+    _energyPoints = 100;
+    _attackDamage = FragTrap_attackDamage;
     std::cout << "FragTrap " << name << " constructor called" << std::endl;
 }
 
@@ -62,11 +62,11 @@ FragTrap::~FragTrap() {
  * @brief Attaque cible FragTrap
  */
 void FragTrap::attack(const std::string &target) {
-    if (energyPoints > 0 && hitPoints > 0) {
-        std::cout << "FragTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
-        energyPoints--;
+    if (_energyPoints > 0 && _hitPoints > 0) {
+        std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+        _energyPoints--;
     } else {
-        std::cout << "FragTrap " << name << " has not enough energy or is dead." << std::endl;
+        std::cout << "FragTrap " << _name << " has not enough energy or is dead." << std::endl;
     }
 }
 
@@ -76,5 +76,5 @@ void FragTrap::attack(const std::string &target) {
  * @action affiche demande de high five
  */
 void FragTrap::highFivesGuys(void) const {
-    std::cout << "FragTrap " << name << " requests a high five!" << std::endl;
+    std::cout << "FragTrap " << _name << " requests a high five!" << std::endl;
 }

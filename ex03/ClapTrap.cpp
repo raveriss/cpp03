@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:32:08 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 12:21:01 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:58:31 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
  * @motclef constructeur, défaut, initialisation, affichage construction
  * @initialisation nom par défaut, points de vie, points d'énergie, dégâts d'attaque
  */
-ClapTrap::ClapTrap() : name("default"), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap() : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap " << name << " constructed." << std::endl;
+	std::cout << "ClapTrap " << _name << " constructed." << std::endl;
 }
 
 /**
@@ -28,9 +28,9 @@ ClapTrap::ClapTrap() : name("default"), hitPoints(10), energyPoints(10), attackD
  * @motclef constructeur, paramétré, initialisation, affichage construction
  * @param name, points de vie, points d'énergie, dégâts d'attaque
  */
-ClapTrap::ClapTrap(const std::string & name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(const std::string & name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap " << this->name << " constructed." << std::endl;
+	std::cout << "ClapTrap " << this->_name << " constructed." << std::endl;
 }
 
 /**
@@ -41,7 +41,7 @@ ClapTrap::ClapTrap(const std::string & name) : name(name), hitPoints(10), energy
 ClapTrap::ClapTrap(const ClapTrap & source)
 {
 	*this = source;
-	std::cout << "ClapTrap " << name << " copied." << std::endl;
+	std::cout << "ClapTrap " << _name << " copied." << std::endl;
 }
 
 /**
@@ -53,10 +53,10 @@ ClapTrap & ClapTrap::operator=(const ClapTrap & source)
 {
 	if (this != &source)
 	{
-		name = source.name;
-		hitPoints = source.hitPoints;
-		energyPoints = source.energyPoints;
-		attackDamage = source.attackDamage;
+		_name = source._name;
+		_hitPoints = source._hitPoints;
+		_energyPoints = source._energyPoints;
+		_attackDamage = source._attackDamage;
 	}
 	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
 	return *this;
@@ -69,7 +69,7 @@ ClapTrap & ClapTrap::operator=(const ClapTrap & source)
  */
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << name << " destructed." << std::endl;
+	std::cout << "ClapTrap " << _name << " destructed." << std::endl;
 }
 
 /**
@@ -79,13 +79,13 @@ ClapTrap::~ClapTrap()
  */
 void ClapTrap::attack(const std::string & target)
 {
-	if (energyPoints == 0 || hitPoints == 0)
+	if (_energyPoints == 0 || _hitPoints == 0)
 	{
-		std::cout << "ClapTrap " << name << " can't attack because it's out of energy or hit points." << std::endl;
+		std::cout << "ClapTrap " << _name << " can't attack because it's out of energy or hit points." << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
-	--energyPoints;
+	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+	--_energyPoints;
 }
 
 /**
@@ -95,13 +95,13 @@ void ClapTrap::attack(const std::string & target)
  */
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (hitPoints == 0)
+	if (_hitPoints == 0)
 	{
-		std::cout << "ClapTrap " << name << " can't take more damage, it's already down!" << std::endl;
+		std::cout << "ClapTrap " << _name << " can't take more damage, it's already down!" << std::endl;
 		return;
 	}
-	hitPoints -= (amount > hitPoints) ? hitPoints : amount;
-	std::cout << "ClapTrap " << name << " took " << amount << " points of damage!" << std::endl;
+	_hitPoints -= (amount > _hitPoints) ? _hitPoints : amount;
+	std::cout << "ClapTrap " << _name << " took " << amount << " points of damage!" << std::endl;
 }
 
 /**
@@ -111,14 +111,14 @@ void ClapTrap::takeDamage(unsigned int amount)
  */
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (energyPoints == 0 || hitPoints == 0)
+	if (_energyPoints == 0 || _hitPoints == 0)
 	{
-		std::cout << "ClapTrap " << name << " can't repair itself because it's out of energy or hit points." << std::endl;
+		std::cout << "ClapTrap " << _name << " can't repair itself because it's out of energy or hit points." << std::endl;
 		return;
 	}
-	hitPoints += amount;
-	--energyPoints;
-	std::cout << "ClapTrap " << name << " repairs itself, regaining " << amount << " hit points!" << std::endl;
+	_hitPoints += amount;
+	--_energyPoints;
+	std::cout << "ClapTrap " << _name << " repairs itself, regaining " << amount << " hit points!" << std::endl;
 }
 
 /**
@@ -127,7 +127,7 @@ void ClapTrap::beRepaired(unsigned int amount)
  * @retour nom ClapTrap
  */
 std::string ClapTrap::getName() const {
-    return name;
+    return _name;
 }
 
 /**
@@ -136,7 +136,7 @@ std::string ClapTrap::getName() const {
  * @retour points de vie ClapTrap
  */
 unsigned int ClapTrap::getHitPoints() const {
-    return hitPoints;
+    return _hitPoints;
 }
 
 /**
@@ -145,7 +145,7 @@ unsigned int ClapTrap::getHitPoints() const {
  * @retour dégâts d'attaque ClapTrap
  */
 unsigned int ClapTrap::getAttackDamage() const {
-    return attackDamage;
+    return _attackDamage;
 }
 
 /**
@@ -154,5 +154,5 @@ unsigned int ClapTrap::getAttackDamage() const {
  * @retour points d'énergie ClapTrap
  */
 unsigned int ClapTrap::getEnergyPoints() const {
-    return energyPoints;
+    return _energyPoints;
 }
