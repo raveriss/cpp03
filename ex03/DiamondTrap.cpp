@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 16:17:41 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 17:10:47 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:48:19 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,6 @@ DiamondTrap & DiamondTrap::operator=(const DiamondTrap & other) {
 DiamondTrap::~DiamondTrap() {
 	std::cout << "DiamondTrap " << name << " is destructed." << std::endl;
 }
-
-// void	DiamondTrap::attack(const std::string& target) {
-// 	ScavTrap::attack(target);
-// }
 
 /**
  * @brief Affiche les noms du DiamondTrap et du ClapTrap
