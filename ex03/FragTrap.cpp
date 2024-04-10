@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:28:44 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 17:07:10 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:54:33 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ FragTrap::FragTrap() : ClapTrap("FragTrap_default") {
 /**
  * @brief Constructeur paramétré FragTrap
  */
-FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
+FragTrap::FragTrap(const std::string & name) : ClapTrap(name) {
     _hitPoints = FragTrap_hitPoints;
     _energyPoints = 100;
     _attackDamage = FragTrap_attackDamage;
@@ -36,15 +36,15 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
 /**
  * @brief Constructeur de copie FragTrap
  */
-FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
+FragTrap::FragTrap(const FragTrap & other) : ClapTrap(other) {
     std::cout << "FragTrap Copy constructor called" << std::endl;
 }
 
 /**
  * @brief Opérateur d'affectation FragTrap
  */
-FragTrap &FragTrap::operator=(const FragTrap &other) {
-    if (this != &other) {
+FragTrap & FragTrap::operator=(const FragTrap & other) {
+    if (this != & other) {
         ClapTrap::operator=(other); // Appel à l'opérateur d'affectation de base
     }
     std::cout << "FragTrap Copy assignment operator called" << std::endl;

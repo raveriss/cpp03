@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 16:17:41 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 17:48:19 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:58:45 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
  * @output Affiche le message de construction
  */
 DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), FragTrap(), ScavTrap(){
-	name = "default";
+	_name = "default";
 	this->_hitPoints = FragTrap_hitPoints;  // Hérite de FragTrap
     this->_energyPoints = ScavTrap_energyPoints;  // Hérite de ScavTrap
     this->_attackDamage = FragTrap_attackDamage;
 
-	std::cout << "DiamondTrap " << name << " is constructed." << std::endl;
+	std::cout << "DiamondTrap " << _name << " is constructed." << std::endl;
 }
 
 /**
@@ -45,6 +45,7 @@ DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), FragTrap(), ScavTrap
 // }
 
 DiamondTrap::DiamondTrap(const std::string & name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap() {
+	this->_name = name;
     _hitPoints = FragTrap_hitPoints;
     _energyPoints = ScavTrap_energyPoints;
     _attackDamage = FragTrap_attackDamage; // Choisissez une valeur appropriée pour DiamondTrap
@@ -60,7 +61,7 @@ DiamondTrap::DiamondTrap(const std::string & name) : ClapTrap(name + "_clap_name
  */
 DiamondTrap::DiamondTrap(const DiamondTrap & other) : ClapTrap(other), FragTrap(other), ScavTrap(other) {
 	*this = other;
-	std::cout << "DiamondTrap " << name << " is copied." << std::endl;
+	std::cout << "DiamondTrap " << _name << " is copied." << std::endl;
 }
 
 /**
@@ -70,9 +71,9 @@ DiamondTrap::DiamondTrap(const DiamondTrap & other) : ClapTrap(other), FragTrap(
  * @inherits ClapTrap::operator=
  */
 DiamondTrap & DiamondTrap::operator=(const DiamondTrap & other) {
-	if (this != &other) {
+	if (this != & other) {
 		ClapTrap::operator=(other);
-		name = other.name;
+		_name = other._name;
 	}
 	return *this;
 }
@@ -82,7 +83,7 @@ DiamondTrap & DiamondTrap::operator=(const DiamondTrap & other) {
  * @output Affiche le message de destruction
  */
 DiamondTrap::~DiamondTrap() {
-	std::cout << "DiamondTrap " << name << " is destructed." << std::endl;
+	std::cout << "DiamondTrap " << _name << " is destructed." << std::endl;
 }
 
 /**
@@ -90,5 +91,5 @@ DiamondTrap::~DiamondTrap() {
  * @output Affiche les noms
  */
 void DiamondTrap::whoAmI() {
-	std::cout << "DiamondTrap name is " << name << " and ClapTrap name is " << ClapTrap::_name << "." << std::endl;
+	std::cout << "DiamondTrap name is " << _name << " and ClapTrap name is " << ClapTrap::_name << "." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:32:08 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 14:58:31 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:59:00 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ ClapTrap::ClapTrap(const ClapTrap & source)
  */
 ClapTrap & ClapTrap::operator=(const ClapTrap & source)
 {
-	if (this != &source)
+	if (this != & source)
 	{
 		_name = source._name;
 		_hitPoints = source._hitPoints;
