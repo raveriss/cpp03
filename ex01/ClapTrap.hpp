@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:31:54 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/08 17:47:29 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:17:32 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 #include <string>
 
+/**
+ * @brief ClapTrap Classe - Gestion Robots Combat
+ * @motclef classe, robots, combat, gestion, attributs privés, méthodes publiques
+ * @attributs nom, points de vie, points d'énergie, dégâts d'attaque
+ * @méthodes constructeur par défaut, constructeur paramétré, constructeur de copie,
+ * opérateur d'affectation, destructeur, attaquer, recevoir dégâts, être réparé, accesseurs
+ */
 class ClapTrap {
 protected:
     std::string name;
@@ -24,12 +31,12 @@ protected:
 
 public:
     ClapTrap();
-    ClapTrap(const std::string& name);
-    ClapTrap(const ClapTrap& other);
-    ClapTrap& operator=(const ClapTrap& other);
-    virtual ~ClapTrap();
+    ClapTrap(const std::string & name);
+    ClapTrap(const ClapTrap & other);
+    ClapTrap & operator=(const ClapTrap& other);
+    virtual ~ ClapTrap();
 
-    void attack(const std::string& target);
+    void attack(const std::string & target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 	std::string getName() const;

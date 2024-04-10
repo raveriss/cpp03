@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:12:02 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/08 19:12:13 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:32:48 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 #include "ClapTrap.hpp"
 
+/**
+ * @brief Classe FragTrap - Extension de ClapTrap
+ * @motclef classe, héritage, ClapTrap, FragTrap, demande high five
+ * @méthodes constructeur par défaut, paramétré, de copie, d'affectation, destructeur,
+ * demande high five, attaque
+ */
 class FragTrap : public ClapTrap {
 public:
     FragTrap();

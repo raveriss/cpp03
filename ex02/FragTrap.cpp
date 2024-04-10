@@ -6,14 +6,16 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:28:44 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/08 19:28:48 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:32:11 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 
-// Constructeur par défaut
+/**
+ * @brief Constructeur par défaut FragTrap
+ */
 FragTrap::FragTrap() : ClapTrap("FragTrap_default") {
     hitPoints = 100;
     energyPoints = 100;
@@ -21,7 +23,9 @@ FragTrap::FragTrap() : ClapTrap("FragTrap_default") {
     std::cout << "FragTrap Default constructor called" << std::endl;
 }
 
-// Constructeur paramétré
+/**
+ * @brief Constructeur paramétré FragTrap
+ */
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
     hitPoints = 100;
     energyPoints = 100;
@@ -29,12 +33,16 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
     std::cout << "FragTrap " << name << " constructor called" << std::endl;
 }
 
-// Constructeur de copie
+/**
+ * @brief Constructeur de copie FragTrap
+ */
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
     std::cout << "FragTrap Copy constructor called" << std::endl;
 }
 
-// Opérateur d'affectation
+/**
+ * @brief Opérateur d'affectation FragTrap
+ */
 FragTrap &FragTrap::operator=(const FragTrap &other) {
     if (this != &other) {
         ClapTrap::operator=(other); // Appel à l'opérateur d'affectation de base
@@ -43,12 +51,16 @@ FragTrap &FragTrap::operator=(const FragTrap &other) {
     return *this;
 }
 
-// Destructeur
+/**
+ * @brief Destructeur FragTrap
+ */
 FragTrap::~FragTrap() {
     std::cout << "FragTrap Destructor called" << std::endl;
 }
 
-// Méthode attack redéfinie
+/**
+ * @brief Attaque cible FragTrap
+ */
 void FragTrap::attack(const std::string &target) {
     if (energyPoints > 0 && hitPoints > 0) {
         std::cout << "FragTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
@@ -58,7 +70,11 @@ void FragTrap::attack(const std::string &target) {
     }
 }
 
-// Capacité spéciale highFivesGuys
+/**
+ * @brief Demande de high five FragTrap
+ * @motclef méthode, FragTrap, demande high five
+ * @action affiche demande de high five
+ */
 void FragTrap::highFivesGuys(void) const {
     std::cout << "FragTrap " << name << " requests a high five!" << std::endl;
 }
