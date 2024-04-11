@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:28:44 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 15:00:35 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:17:25 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,31 @@ FragTrap::FragTrap() : ClapTrap("FragTrap_default") {
     hitPoints = 100;
     energyPoints = 100;
     attackDamage = 30;
-    std::cout << "FragTrap Default constructor called" << std::endl;
+    std::cout << "FragTrap Default constructor called." << std::endl;
 }
 
 /**
  * @brief Constructeur paramétré FragTrap
  */
-FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
+FragTrap::FragTrap(const std::string & name) : ClapTrap(name) {
     hitPoints = 100;
     energyPoints = 100;
     attackDamage = 30;
-    std::cout << "FragTrap " << name << " constructor called" << std::endl;
+    std::cout << "FragTrap " << name << " constructor called with parametre." << std::endl;
 }
 
 /**
  * @brief Constructeur de copie FragTrap
  */
-FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
+FragTrap::FragTrap(const FragTrap & other) : ClapTrap(other) {
     std::cout << "FragTrap Copy constructor called" << std::endl;
 }
 
 /**
  * @brief Opérateur d'affectation FragTrap
  */
-FragTrap &FragTrap::operator=(const FragTrap &other) {
-    if (this != &other) {
+FragTrap & FragTrap::operator=(const FragTrap & other) {
+    if (this != & other) {
         ClapTrap::operator=(other); // Appel à l'opérateur d'affectation de base
     }
     std::cout << "FragTrap Copy assignment operator called" << std::endl;
@@ -61,7 +61,7 @@ FragTrap::~FragTrap() {
 /**
  * @brief Attaque cible FragTrap
  */
-void FragTrap::attack(const std::string &target) {
+void FragTrap::attack(const std::string & target) {
     if (energyPoints > 0 && hitPoints > 0) {
         std::cout << "FragTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
         energyPoints--;

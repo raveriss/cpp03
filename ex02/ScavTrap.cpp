@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:16:59 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 11:37:08 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:18:24 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ScavTrap::ScavTrap(const std::string & name) : ClapTrap(name)
     hitPoints = 100;
     energyPoints = 50;
     attackDamage = 20;
-    std::cout << "ScavTrap " << name << " constructor called" << std::endl;
+    std::cout << "ScavTrap " << name << " constructor called with paramere" << std::endl;
 }
 
 /**
@@ -44,7 +44,7 @@ ScavTrap::ScavTrap(const std::string & name) : ClapTrap(name)
  * @motclef constructeur, copie, héritage ClapTrap
  * @action copie attributs via ClapTrap, affichage construction copie
  */
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap & other) : ClapTrap(other)
 {
     std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
@@ -76,7 +76,7 @@ ScavTrap::~ScavTrap()
  * @motclef méthode, attaque, vérification énergie et vie
  * @action attaque cible, réduit énergie, affiche résultat attaque
  */
-void ScavTrap::attack(const std::string& target)
+void ScavTrap::attack(const std::string & target)
 {
     if (energyPoints > 0 && hitPoints > 0)
     {

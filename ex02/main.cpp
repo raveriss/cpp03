@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:41:57 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 12:55:40 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:17:54 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @param nom, points de vie, points d'énergie
  * @action affiche état avec couleurs
  */
-void displayStatus(const std::string& name, int hitPoints, int energyPoints)
+void displayStatus(const std::string & name, int hitPoints, int energyPoints)
 {
     std::cout << "\033[34m" <<  name << " has " << hitPoints << " hit points and "
               << energyPoints << " energy points left." << std::endl << std::endl << "\033[0m";
@@ -35,6 +35,7 @@ void displayStatus(const std::string& name, int hitPoints, int energyPoints)
 int main()
 {
     ClapTrap claptrap("ClapTrap1");
+    displayStatus(claptrap.getName(), claptrap.getHitPoints(), claptrap.getEnergyPoints());
     claptrap.attack("Dark Vador");
     displayStatus(claptrap.getName(), claptrap.getHitPoints(), claptrap.getEnergyPoints());
     claptrap.takeDamage(5);
@@ -44,6 +45,7 @@ int main()
 
     // Création d'une instance de ScavTrap
     ScavTrap scavtrap("ScavTrap1");
+    displayStatus(scavtrap.getName(), scavtrap.getHitPoints(), scavtrap.getEnergyPoints());
     scavtrap.attack("Darth Maul");
     displayStatus(scavtrap.getName(), scavtrap.getHitPoints(), scavtrap.getEnergyPoints());
     scavtrap.takeDamage(20);
@@ -56,6 +58,7 @@ int main()
 
     // Création d'une instance de FragTrap
     FragTrap fragtrap("FragTrap1");
+    displayStatus(fragtrap.getName(), fragtrap.getHitPoints(), fragtrap.getEnergyPoints());
     fragtrap.attack("Snoke");
     displayStatus(fragtrap.getName(), fragtrap.getHitPoints(), fragtrap.getEnergyPoints());
     fragtrap.takeDamage(30);

@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:41:57 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 13:01:52 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:20:06 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  * @param nom, points de vie, points d'énergie
  * @action affiche état avec couleurs
  */
-void displayStatus(const std::string& name, int hitPoints, int energyPoints)
+void displayStatus(const std::string & name, int hitPoints, int energyPoints)
 {
     std::cout   << "\033[34m" <<  name << " has " << hitPoints 
                 << " hit points and " << energyPoints << " energy points left." 
@@ -38,7 +38,6 @@ void displayStatus(const std::string& name, int hitPoints, int energyPoints)
 int main() {
     DiamondTrap dt("DiamondBoy");
     displayStatus(dt.getName(), dt.getHitPoints(), dt.getEnergyPoints());
-
     dt.whoAmI();
     dt.attack("Dark Vador");
     displayStatus(dt.getName(), dt.getHitPoints(), dt.getEnergyPoints());

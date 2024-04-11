@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:32:08 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 10:45:21 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:14:56 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ ClapTrap::ClapTrap() : name("default"), hitPoints(10), energyPoints(10), attackD
  * @motclef constructeur, paramétré, initialisation, affichage construction
  * @param name, points de vie, points d'énergie, dégâts d'attaque
  */
-ClapTrap::ClapTrap(const std::string &name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(const std::string & name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "ClapTrap " << this->name << " constructed." << std::endl;
+	std::cout << "ClapTrap " << this->name << " constructed with parametre." << std::endl;
 }
 
 /**
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap(const std::string &name) : name(name), hitPoints(10), energyP
  * @motclef constructeur, copie, affichage copié
  * @action copie attributs, affiche nom copié
  */
-ClapTrap::ClapTrap(const ClapTrap &source)
+ClapTrap::ClapTrap(const ClapTrap & source)
 {
 	*this = source;
 	std::cout << "ClapTrap " << name << " copied." << std::endl;
@@ -49,9 +49,9 @@ ClapTrap::ClapTrap(const ClapTrap &source)
  * @motclef opérateur, affectation, vérification auto-affectation
  * @action copie sécurisée attributs si différent de source
  */
-ClapTrap &ClapTrap::operator=(const ClapTrap &source)
+ClapTrap & ClapTrap::operator=(const ClapTrap & source)
 {
-	if (this != &source)
+	if (this != & source)
 	{
 		name = source.name;
 		hitPoints = source.hitPoints;
@@ -76,7 +76,7 @@ ClapTrap::~ClapTrap()
  * @motclef méthode, attaque, vérification points d'énergie et de vie
  * @action attaque cible, réduction points d'énergie, affichage attaque
  */
-void ClapTrap::attack(const std::string &target)
+void ClapTrap::attack(const std::string & target)
 {
 	if (energyPoints == 0 || hitPoints == 0)
 	{

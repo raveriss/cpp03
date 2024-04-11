@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 16:17:41 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 17:58:45 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:19:10 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,6 @@ DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), FragTrap(), ScavTrap
  * @inherits ClapTrap, FragTrap, ScavTrap
  * @output Affiche le message de construction
  */
-// DiamondTrap::DiamondTrap(const std::string & name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap() {
-// 	this->name = name;
-// 	this->_hitPoints = FragTrap::_hitPoints;  // Hérite de FragTrap
-//     this->_energyPoints = ScavTrap::_energyPoints;  // Hérite de ScavTrap
-//     this->_attackDamage = FragTrap::_attackDamage;
-// 	printf("La valeur de FragTrap::_attackDamage est egal a : %d\n", FragTrap::_attackDamage);
-// 	std::cout << "DiamondTrap " << this->name << " is constructed." << std::endl;
-// }
-
 DiamondTrap::DiamondTrap(const std::string & name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap() {
 	this->_name = name;
     _hitPoints = FragTrap_hitPoints;

@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:16:59 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 11:27:36 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:15:53 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap() : ClapTrap("ScavTrap_default")
     hitPoints = 100;
     energyPoints = 50;
     attackDamage = 20;
-    std::cout << "ScavTrap Default constructor called" << std::endl;
+    std::cout << "ScavTrap Default constructor called." << std::endl;
 }
 
 /**
@@ -36,7 +36,7 @@ ScavTrap::ScavTrap(const std::string & name) : ClapTrap(name)
     hitPoints = 100;
     energyPoints = 50;
     attackDamage = 20;
-    std::cout << "ScavTrap " << name << " constructor called" << std::endl;
+    std::cout << "ScavTrap " << name << " constructor called with parametre." << std::endl;
 }
 
 /**
@@ -57,7 +57,7 @@ ScavTrap::ScavTrap(const ScavTrap & other) : ClapTrap(other)
 ScavTrap & ScavTrap::operator=(const ScavTrap & other)
 {
     ClapTrap::operator=(other);
-    std::cout << "ScavTrap Copy assignment operator called" << std::endl;
+    std::cout << "ScavTrap Copy assignment operator called." << std::endl;
     return *this;
 }
 
@@ -76,7 +76,7 @@ ScavTrap::~ScavTrap()
  * @motclef méthode, attaque, vérification énergie et vie
  * @action attaque cible, réduit énergie, affiche résultat attaque
  */
-void ScavTrap::attack(const std::string& target)
+void ScavTrap::attack(const std::string & target)
 {
     if (energyPoints > 0 && hitPoints > 0)
     {

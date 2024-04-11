@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:32:08 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 11:16:51 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:03:52 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap() : name("default"), hitPoints(10), energyPoints(10), attackD
  */
 ClapTrap::ClapTrap(const std::string & name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "ClapTrap " << this->name << " constructed." << std::endl;
+	std::cout << "ClapTrap " << this->name << " constructed with parametre." << std::endl;
 }
 
 /**

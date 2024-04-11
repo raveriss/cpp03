@@ -6,7 +6,7 @@
 /*   By: raveriss <raveriss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:28:44 by raveriss          #+#    #+#             */
-/*   Updated: 2024/04/10 17:54:33 by raveriss         ###   ########.fr       */
+/*   Updated: 2024/04/11 11:19:45 by raveriss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ FragTrap::~FragTrap() {
 /**
  * @brief Attaque cible FragTrap
  */
-void FragTrap::attack(const std::string &target) {
+void FragTrap::attack(const std::string & target) {
     if (_energyPoints > 0 && _hitPoints > 0) {
         std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
         _energyPoints--;
