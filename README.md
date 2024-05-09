@@ -50,5 +50,6 @@ Development of the `DiamondTrap` class, which inherits from both `ScavTrap` and 
 ## Compilation and Execution
 To compile an exercise, navigate to the corresponding directory and use `make`. Each program can be run from the command line to demonstrate the designed functionalities.
 
-## Ressources
-The exercises use standard C++98 features to explore inheritance, with references to common C++ resources and the official documentation.
+## Ressources Utilisées
+- [Apprenez à programmer en C++ sur OpenClassrooms](https://openclassrooms.com/fr/courses/1894236-apprenez-a-programmer-en-c)
+- [Programmez en orienté objet avec C++ sur OpenClassrooms](https://openclassrooms.com/fr/courses/7137751-programmez-en-oriente-objet-avec-c)
